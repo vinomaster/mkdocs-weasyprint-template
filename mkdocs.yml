@@ -1,0 +1,43 @@
+site_name: 'NAME'
+site_description: 'DESCRIPTION.'
+docs_dir: 'content'
+site_dir: 'html'
+dev_addr: '127.0.0.1:8800'
+
+nav:
+- Introduction:
+    - 'Overview': 'index.md'
+- Section 1:
+    - Sub-Section 1:
+        - 'Topic A': 'folderA/file1.md'
+- Section 2:
+    - Sub-Section 1:
+        - 'Topic B': 'folderB/file1.md'
+- Help:
+    - 'FAQ': 'faq.md'
+    - 'Contact us': 'contact_us.md'
+
+plugins:
+    - search
+    - pdf-export:
+        verbose: true
+        media_type: print
+        enabled_if_env: ENABLE_PDF_EXPORT
+        combined: true
+        combined_output_path: ../pdf/PDF_FILE_NAME.pdf
+
+theme:
+    name: 'material'
+#    custom_dir: 'theme/material/'
+
+extra_css:
+    - css/extra.css
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+
+
+copyright: Copyright &copy; 2020

@@ -1,0 +1,22 @@
+version: '1'
+
+services:
+  prj-documentation:
+    container_name: prj-docs
+    image: prj-docs
+    ports:
+      - 5500:5500
+    build:
+      context: .
+    networks:
+     - documentnet
+    logging:
+      options:
+        max-size: 100m
+    restart: always
+    # volumes:
+      # - .:/home/node
+
+
+networks:
+  documentnet:
