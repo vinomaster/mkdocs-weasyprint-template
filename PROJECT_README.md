@@ -34,12 +34,17 @@ $ make
 
 1. Clone repository
 
-```
-git clone REPO_LINK
-git remote
-git remote add upstream REPO_LINK
-git remote
-```
+    ```
+    git clone REPO_LINK
+    git remote
+    ```
+
+    If you are working with a ```fork``` of an ```upstream``` repo the you should also perform these commands:
+
+    ```
+    git remote add upstream REPO_LINK
+    git remote
+    ```
 
 2. Setup Environment
 
@@ -77,11 +82,17 @@ Before each coding session, insure your ```fork``` and ```local-machine``` are i
 
 ```
 git fetch upstream
-git rebase upstream/master\
+git rebase upstream/master
+```
+OR
+```
+make rebase
 ```
 
 ### Upstream Refresh Process
 This repo uses a [GitHub Workflow](.github/workflows/main.yml) process coupled with a [GitHub Action](https://github.com/marketplace/actions/mkdocs-github-deploy) to automatically refresh the GitHub Pages on the ```upstream``` repo.
+
+If the GitHub Workflow (```.github/workflow/main.yml```) is used, then it is not necessary to perform ```make pages```.
 
 ## Help
 Please refer to [mkdocs-pdf-export-plugin](https://github.com/zhaoterryy/mkdocs-pdf-export-plugin) for PDF tooling configuration help.
